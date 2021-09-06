@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ </header><!-- End Header -->  <br> <br> <br> <br>
+
+  <div class="container ">
+        <div class="row mt-5">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline services-head text-center">
+                    <h2 style="color: #2d335c;">Single Automobile </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="listing" class="py-4">
+        <div class="container">
+          <a href="{% url 'automobiles'%}" class="btn btn-lights mb-4 text-light " style="background-color: rgb(240, 22, 22);"> <i class="fa fa-arrow-left"></i></a>
+          <div class="row">
+            <div class="col-md-8">
+              <!-- Home Main Image -->
+              <img src="{{ automobile.image.url}}" class="img-main img-fluid mb-3">
+              <!-- Thumbnails -->
+              <div class="row mb-5 thumbs">
+              {% if automobile.image1 %}
+                <div class="col-md-2">
+                  <a href="{{ automobile.image1.url}}" data-lightbox="home-images">
+                    <img src="{{ automobile.image1.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if automobile.image2 %}
+                <div class="col-md-2">
+                  <a href="{{ automobile.image2.url}}" data-lightbox="home-images">
+                    <img src="{{ automobile.image2.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if automobile.image3 %}
+                <div class="col-md-2">
+                  <a href="{{ automobile.image3.url}}" data-lightbox="home-images">
+                    <img src="{{ automobile.image3.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if automobile.image4 %}
+                <div class="col-md-2">
+                  <a href="{{ automobile.image4.url}}" data-lightbox="home-images">
+                    <img src="{{ automobile.image4.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if automobile.image5 %}
+                <div class="col-md-2">
+                  <a href="{{ automobile.image5.url}}" data-lightbox="home-images">
+                    <img src="{{ automobile.image5.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if automobile.image6 %}
+                <div class="col-md-2">
+                  <a href="{{ automobile.image6.url}}" data-lightbox="home-images">
+                    <img src="{{ automobile.image6.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+              <!-- Fields -->
+              <div class="row mb-5 fields">
+                <div class="col-md-6">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-money"></i> Asking Price:
+                      <span class="float-right"># {{ automobile.price}}</span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-bookmark"></i> Car Name: 
+                      <span class="float-right">{{ automobile.carName}}</span>
+                      
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-tag"></i> Model name: 
+                      <span class="float-right">  {{ automobile.aka}}</span>
+                      
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-calendar"></i> model Year: 
+                      <span class="float-right">{{ automobile.modelyear}}</span>
+                      
+                     
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-paint-brush"></i> Color: 
+                      <span class="float-right">{{ automobile.color}}</span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-square"></i> Grading:
+                      <span class="float-right">{{ automobile.grade}}
+                      </span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-calendar"></i> Listing Date:
+                      <span class="float-right">{{ automobile.listingDate}}</span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-user"></i> Team member:
+                      <span class="float-right">{{ automobile.team}}
+                      </span>
+                    </li>
+    
+    
+                  </ul>
+                </div>
+              </div>
+    
+              <!-- Description -->
+              <div class="row mb-5">
+                <div class="col-md-12">
+                  {{ automobile.description}}
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+
+      </section>
+      <div id="team" class="our-team-area area-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline services-head text-center">
+                <h2 style="color: #2d335c;">Chat Our Team For Discussion</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+          {% if teams %}
+              {% for team in teams %}
+                  <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                    <img src="{{team.image.url}}" alt="">
+                  </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="http://www.facebook.com/profile.php?id={{team.facebook}}"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a href="http://twitter.com/{{team.twitter}}"><i class="fa fa-twitter"></i></a>
+                      </li>
+                      
+                      <li>
+                        <a href="https://api.whatsapp.com/send?phone=+234{{team.whatsApp}}"><i class="fa fa-whatsapp"></i></a>
+                      </li>
+                      <li>
+                        <a href="http://instagram.com/{{team.instagram}}"><i class="fa fa-instagram"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="team-content text-center">
+                  <h4>{{team.name}}</h4>
+                  <p>{{team.position}}</p>
+                </div>
+              </div>
+            </div>
+              {% endfor %}
+          {% else %}
+          No Team
+          {% endif %}
+            
+          
+          </div>
+        </div>
+      </div><!-- End Team Section -->
+  
+    
+      <!-- Inquiry Modal -->
+      <div class="modal fade" id="inquiryModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
+              <button type="button" class="close" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form >
+                
+                <div class="form-group">
+                  <label for="property_name" class="col-form-label">Property:</label>
+                  <input type="text" name="listing" class="form-control" value="" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="name" class="col-form-label">Name:</label>
+                  <input type="text" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="col-form-label">Email:</label>
+                  <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="col-form-label">Phone:</label>
+                  <input type="text" name="phone" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="message" class="col-form-label">Message:</label>
+                  <textarea name="message" class="form-control"></textarea>
+                </div>
+                <hr>
+                <input type="submit" value="Send" class="btn btn-block btn-secondary">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

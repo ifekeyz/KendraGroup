@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <br> <br> <br> <br>
+ <div class="container ">
+        <div class="row mt-5">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline services-head text-center">
+                    <h2 style="color: #2d335c;">About Us </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--Alert-->
+          {% include 'partials/_alert.html'%}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="card col-md-12 col-sm-12 col-lg-6 justify-content-center" style="background-color: #2d335c;">
+                <div class="card-header text-center">
+                    <h4 class="text-white"> We are here to serve you better</h4>
+                </div>
+
+                <!-- About kendra group end -->
+                <section id="hero">
+                    <div class="hero-container">
+                    
+                      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                      {% if sliders %}
+                                  {% for slider in sliders %}
+                
+                        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+                
+                        <div class="carousel-inner" role="listbox">
+                            
+                                       <!-- Slide 1 -->
+                          <div class="carousel-item active" style="background: url({{slider.slider2.url}})">
+                            <div class="carousel-container">
+                              <div class="carousel-content">
+                                <h2 class="animate__animated animate__fadeInDown">Welcome to <span style="color: rgb(240, 22, 22);">K</span>endra <span style="color: rgb(240, 22, 22);">Group</span></h2>
+                                <p style="color: #fff;" class="animate__animated animate__fadeInUp">We buy and sell landed properties suitable for Residential, Commercial and Mixed purposes anywhere in Lagos.</p>
+                                <a href="{% url 'housesales' %}" class="btn-get-started animate__animated animate__fadeInUp">House For Sale</a>
+                               
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Slide 2 -->
+                          <div class="carousel-item" style="background: url({{slider.slider1.url}})">
+                            <div class="carousel-container">
+                              <div class="carousel-content">
+                                <h2 class="animate__animated fanimate__adeInDown"><span style="color: rgb(240, 22, 22);">K</span>endra <span style="color: rgb(240, 22, 22);">Group</span></h2>
+                                <p  style="color: #fff;" class="animate__animated animate__fadeInUp">Is the general management and coordination of a commercial or residential property. This involves the general maintenance.</p>
+                                <a href="{% url 'houserents' %}" class="btn-get-started animate__animated animate__fadeInUp">house for Rent</a>
+                              </div>
+                            </div>
+                          </div>
+                
+                          <!-- Slide 3 -->
+                          <div class="carousel-item" style="background: url({{slider.slider3.url}})">
+                            <div class="carousel-container">
+                              <div class="carousel-content">
+                                <h2 class="animate__animated animate__fadeInDown"><span style="color: rgb(240, 22, 22);">K</span>endra <span style="color: rgb(240, 22, 22);">Group</span></h2>
+                                <p   style="color: #fff;"class="animate__animated animate__fadeInUp">We buy and sell landed properties suitable for Residential, Commercial and Mixed purposes anywhere in Lagos.</p>
+                                <a href="{% url 'automobiles' %}" class="btn-get-started animate__animated animate__fadeInUp">Automobile for sale</a>
+                              </div>
+                            </div>
+                          </div> 
+
+
+                          </div>
+                
+                        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                
+                        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                          <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                
+                      
+                  
+                 
+                    
+                  
+                  
+                    
+                                  {% endfor %}
+                            {% else %}
+                            NOTHING
+                            {% endif %}
+                         </div>
+                 </div>
+                </div>
+                        
+                    <div class="col-lg-6 " style="color: #2d335c; font-size: 18px;"> Kendragroup is a group that ensure <br>
+                     general management and coordination of a commercial or residential property. This involves the general maintenance. <br>
+                    Also We have a team of competent &experienced Architects, Engineers and Builders with over a decade construction industry experience and turnkey projects to our credit. 
+                     We can handle your architectural designs, Construction of Duplexes, Terraces, Shopping Mall, Hotels, Schools and Renovations etc. <br>  <br>
+                     <div>  <br> <br> <br>
+                     <ul>
+                        <li><i class="fa fa-bookmark " style="color: rgb(240, 22, 22);"></i> Architecture & Engineering</li> <br>
+                        <li><i class="fa fa-bookmark " style="color: rgb(240, 22, 22);"></i> Interior design & Decorations</li> <br>
+                        <li><i class="fa fa-bookmark " style="color: rgb(240, 22, 22);"></i> Real Estate Brokerage</li> <br>
+                        <li><i class="fa fa-bookmark " style="color: rgb(240, 22, 22);"></i> Automobiles</li>
+                        
+                    </ul> <br> <br> <br> <br>
+                    <hr style="color: #2d335c;" > 
+                            
+                    <div style="color: #2d335c;">
+
+                <i class="fa fa-chevron-right"></i>            MISSION:To ensure affordable housing for all. <br>  <hr style="color: #2d335c;" >
+                <i class="fa fa-chevron-right"></i>  VISION:To be one of the leading Real Estate Brokerage, Engineering and Architectural firms in Nigeria.  <br>  <hr style="color: #2d335c;" >
+                <i class="fa fa-chevron-right"></i>  AIM: To reduce risk of landed property acquisition in Nigeria 
+                    </div>
+
+                </div>
+                    </div>
+                    
+                         </div>
+                     
+                     <!-- End Slider -->
+                    </div>
+                    </section><!-- End Hero -->
+                     
+   
+</div> 
+</div>
+
+
+    </div>
+    </div>
+    </div>
+</div> <br> <br> <br>
+{% endblock %}

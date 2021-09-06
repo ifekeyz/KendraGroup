@@ -1,0 +1,62 @@
+  {% load static %}
+  <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      
+        <title>Kendragroup</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+      
+        <!-- Favicons -->
+        <link href="{% static 'img/Capturekendra-removebg-preview.png' %}" rel="icon">
+        <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+      
+        <!-- Google Fonts -->
+        <link
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900"
+          rel="stylesheet">
+      
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/nivo-slider/css/nivo-slider.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+      
+        <!-- Template Main CSS File -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+      
+      
+      </head>
+      <body>
+      <!--navbar-->
+      {% include 'partials/_navbar.html' %}
+      <!--main-->
+      {% block content %}{% endblock %}
+      <!--footer-->
+      {% include 'partials/_footer.html' %}
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+    <script src="{% static 'vendor/appear/jquery.appear.js' %}"></script>
+    <script src="{% static 'vendor/knob/jquery.knob.js' %}"></script>
+    <script src="{% static 'vendor/parallax/parallax.js' %}"></script>
+    <script src="{% static 'vendor/wow/wow.min.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/nivo-slider/js/jquery.nivo.slider.js' %}"></script>
+    <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script> 
+    <!-- <script src="/assets/js/slider1.js"></script> -->
+</body>
+</html>

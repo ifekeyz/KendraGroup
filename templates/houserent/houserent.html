@@ -1,0 +1,345 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+  <br> <br> <br> <br>
+
+  <div class="container ">
+        <div class="row mt-5">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline services-head text-center">
+                    <h2 style="color: #2d335c;">Single Houserent </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+     <section id="listing" class="py-4">
+        <div class="container">
+          <a href="{% url 'houserents'%}" class="btn btn-lights mb-4 text-light " style="background-color: rgb(240, 22, 22);"> <i class="fa fa-arrow-left"></i></a>
+          <div class="row">
+            <div class="col-md-8">
+              <!-- Home Main Image -->
+              <img src="{{ houserent.image.url}}" class="img-main img-fluid mb-3">
+              <!-- Thumbnails -->
+              <div class="row mb-5 thumbs">
+              {% if houserent.image1 %}
+                <div class="col-md-2">
+                  <a href="{{ houserent.image1.url}}" data-lightbox="home-images">
+                    <img src="{{ houserent.image1.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if houserent.image2 %}
+                <div class="col-md-2">
+                  <a href="{{ houserent.image2.url}}" data-lightbox="home-images">
+                    <img src="{{ houserent.image2.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if houserent.image3 %}
+                <div class="col-md-2">
+                  <a href="{{ houserent.image3.url}}" data-lightbox="home-images">
+                    <img src="{{ houserent.image3.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if houserent.image4 %}
+                <div class="col-md-2">
+                  <a href="{{ houserent.image4.url}}" data-lightbox="home-images">
+                    <img src="{{ houserent.image4.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if houserent.image5 %}
+                <div class="col-md-2">
+                  <a href="{{ houserent.image5.url}}" data-lightbox="home-images">
+                    <img src="{{ houserent.image5.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if houserent.image6 %}
+                <div class="col-md-2">
+                  <a href="{{ houserent.image6.url}}" data-lightbox="home-images">
+                    <img src="{{ houserent.image6.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+              <!-- Fields -->
+              <div class="row mb-5 fields">
+                <div class="col-md-6">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-money-bill-alt"></i> Asking Price:
+                      <span class="float-right"># {{houserent.price | intcomma}}</span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-bed"></i> Bedrooms:
+                      <span class="float-right">{{houserent.bedroom}}</span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-bath"></i> Bathrooms:
+                      <span class="float-right">{{houserent.bathroom}}</span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fas fa-car"></i> Garage:
+                      <span class="float-right">{{houserent.garage}}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-th-large"></i> Square Feet:
+                      <span class="float-right">{{houserent.landsize}}</span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-square"></i> Lot Size:
+                      <span class="float-right">{{houserent.landsize}}
+                      </span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-calendar"></i> Listing Date:
+                      <span class="float-right">{{houserent.listingDate}}</span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-bed"></i> Realtor:
+                      <span class="float-right">{{houserent.team}}
+                      </span>
+                    </li>
+    
+    
+                  </ul>
+                </div>
+              </div>
+    
+              <!-- Description -->
+              <div class="row mb-5">
+                <div class="col-md-12">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia recusandae esse reiciendis officia omnis non rerum dicta
+                  cupiditate nostrum molestias deserunt aut minus inventore animi atque, consequuntur ad fugit. Possimus culpa
+                  blanditiis repellendus ipsa similique ullam, natus error dolor harum.
+                </div>
+              </div>
+            </div>
+            <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primarys" style="background-color: #2d335c; color:#fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Property Inspection Form
+    </button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title  text-danger" id="exampleModalLabel">Property Inspection Form</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{% url 'forms'%}" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="property_name" class="col-form-label">Property:</label>
+            <input type="text" name="location" class="form-control" value="{{houserent.location}}">
+          </div>
+          <div class="form-group">
+            <label for="name" class="col-form-label">Name:</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-form-label">Email:</label>
+            <input type="email" name="email" class="form-control" required >
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-form-label">Address</label>
+            <input type="address" name="address" class="form-control" required >
+          </div>
+          <div class="form-group mb-1">
+            <label for="phone" class="col-form-label">Phone:</label>
+            <input type="text" name="phone" class="form-control" required >
+          </div> <br>
+         
+          <select class="form-select " aria-label="Default select example" required  style="color: #2d335c;">
+            <option selected>State of origin</option>
+            <option value="1">Abuja (FCT)</option>
+            <option value="2">Abia</option>
+            <option value="3">Anambra</option>
+            <option value="3">Adamawa</option>
+            <option value="3">Adamawa</option>
+            <option value="3">Bauchi</option>
+            <option value="3">Bayelsa</option>
+            <option value="3">Benue</option>
+            <option value="3">Borno</option>
+            <option value="3">Cross River</option>
+             <option value="3">Delta</option>
+             <option value="3">Ebonyi</option>
+             <option value="3">Ekiti</option>
+             <option value="3">Enugu</option>
+             <option value="3">Gombe</option>
+             <option value="3">Imo</option>
+             <option value="3">Jigawa</option>
+             <option value="3">Kaduna</option>
+             <option value="3">Kano</option>
+             <option value="3">Katsina</option>
+             <option value="3">Kebbi</option>
+             <option value="3">kwara</option>
+             <option value="3">Kogi</option>
+             <option value="3">Lagos</option>
+             <option value="3">Nasarawa</option>
+             <option value="3">Niger</option>
+             <option value="3">Ogun</option>
+             <option value="3">Ondo</option>
+             <option value="3">Osun</option>
+             <option value="3">Oyo</option>
+             <option value="3">Ogun</option>
+             <option value="3">Plateau</option>
+             <option value="3">Rivers</option>
+             <option value="3">Plateau</option>
+             <option value="3">Sokoto</option>
+             <option value="3">Taraba</option>
+             <option value="3">Yobe</option>
+             <option value="3">Zamfara</option>
+            
+           
+          </select>
+           
+          <div class="form-group mb-1">
+            <label for="name" class="col-form-label">Date of birth:</label>
+            <input type="date" name="dateofbirth" class="form-control" required>
+          </div>
+           <label for=" sex">Sex:</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Female</label>
+          </div>
+         
+          
+          <div class="form-group mb-2">
+            <label for="name" class="col-form-label">Occupation:</label>
+            <input type="text" name="occupation" class="form-control" required>
+          </div>
+          <label for=" sex">Marital status:</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">Single</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Married</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Divorced</label>
+          </div>
+         
+          <hr>
+          <small class="text-danger">N:B:On submiting this form you will pay the amount of #5000</small> <hr>
+          <input type="submit" class="btn  text-light  col-12" style="  background-color: #2d335c;" value="Send">
+         {% comment %} <a href=""  class="btn btn-outline-successs btn-block col-12" style="background-color: #2d335c;color: #fff;">Submit</a> {% endcomment %}
+        </form>
+      </div>
+      <div class="modal-footer">
+       
+      </div>
+    </div>
+  </div>
+</div>
+     </section>
+      <div id="team" class="our-team-area area-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline services-head text-center">
+                <h2 style="color: #2d335c;">Chat Our Team For Discussion</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+          {% if teams %}
+              {% for team in teams %}
+                  <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                    <img src="{{team.image.url}}" alt="">
+                  </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="http://www.facebook.com/profile.php?id={{team.facebook}}"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a href="http://twitter.com/{{team.twitter}}"><i class="fa fa-twitter"></i></a>
+                      </li>
+                      
+                      <li>
+                        <a href="https://api.whatsapp.com/send?phone=+234{{team.whatsApp}}"><i class="fa fa-whatsapp"></i></a>
+                      </li>
+                      <li>
+                        <a href="http://instagram.com/{{team.instagram}}"><i class="fa fa-instagram"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="team-content text-center">
+                  <h4>{{team.name}}</h4>
+                  <p>{{team.position}}</p>
+                </div>
+              </div>
+            </div>
+              {% endfor %}
+          {% else %}
+          No Team
+          {% endif %}
+          
+          </div>
+        </div>
+      </div><!-- End Team Section -->
+      
+  
+    
+      <!-- Inquiry Modal -->
+      {% comment %} <div class="modal fade" id="inquiryModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
+              <button type="button" class="close" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="property_name" class="col-form-label">Property:</label>
+                  <input type="text" name="listing" class="form-control" value="45 Drivewood Cirlce" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="name" class="col-form-label">Name:</label>
+                  <input type="text" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="col-form-label">Email:</label>
+                  <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="col-form-label">Phone:</label>
+                  <input type="text" name="phone" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="message" class="col-form-label">Message:</label>
+                  <textarea name="message" class="form-control"></textarea>
+                </div>
+                <hr>
+                <input type="submit" value="Send" class="btn btn-block btn-secondary">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div> {% endcomment %}
+    
+{% endblock %}

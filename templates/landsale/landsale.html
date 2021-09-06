@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <br> <br> <br> <br>
+  <div class="container ">
+        <div class="row mt-5">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline services-head text-center">
+                    <h2 style="color: #2d335c;">Single Landsale </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+   <section id="listing" class="py-4">
+        <div class="container">
+          <a href="{% url 'landsales'%}" class="btn btn-lights mb-4 text-light " style="background-color: rgb(240, 22, 22);"> <i class="fa fa-arrow-left"></i></a>
+          <div class="row">
+            <div class="col-md-8">
+              <!-- Home Main Image -->
+              <img src="{{ landsale.image.url}}" class="img-main img-fluid mb-3">
+              <!-- Thumbnails -->
+              <div class="row mb-5 thumbs">
+              {% if landsale.image1 %}
+                <div class="col-md-2">
+                  <a href="{{ landsale.image1.url}}" data-lightbox="home-images">
+                    <img src="{{ landsale.image1.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if landsale.image2 %}
+                <div class="col-md-2">
+                  <a href="{{ landsale.image2.url}}" data-lightbox="home-images">
+                    <img src="{{ landsale.image2.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if landsale.image3 %}
+                <div class="col-md-2">
+                  <a href="{{ landsale.image3.url}}" data-lightbox="home-images">
+                    <img src="{{ landsale.image3.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if landsale.image4 %}
+                <div class="col-md-2">
+                  <a href="{{ landsale.image4.url}}" data-lightbox="home-images">
+                    <img src="{{ landsale.image4.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if landsale.image5 %}
+                <div class="col-md-2">
+                  <a href="{{ landsale.image5.url}}" data-lightbox="home-images">
+                    <img src="{{ landsale.image5.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+                {% if landsale.image6 %}
+                <div class="col-md-2">
+                  <a href="{{ landsale.image6.url}}" data-lightbox="home-images">
+                    <img src="{{ landsale.image6.url}}" alt="" class="img-fluid" >
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+              <!-- Fields -->
+              <div class="row mb-5 fields">
+                <div class="col-md-6">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-money"></i> Asking Price:
+                      <span class="float-right"># 490,000</span>
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-map-marker"></i> Location: 
+                      \<span class="float-right">ikrodu</span>
+                      
+                    </li>
+                    <li class="list-group-item " style="color: #2d335c;">
+                      <i class="fa fa-th-large"></i> sqr metre: 
+                      <span class="float-right">  4 plots</span>
+                      
+                    </li>
+                   
+                  </ul>
+                </div>
+               
+              </div>
+    
+              <!-- Description -->
+              <div class="row mb-5">
+                <div class="col-md-12">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia recusandae esse reiciendis officia omnis non rerum dicta
+                  cupiditate nostrum molestias deserunt aut minus inventore animi atque, consequuntur ad fugit. Possimus culpa
+                  blanditiis repellendus ipsa similique ullam, natus error dolor harum.
+                </div>
+              </div>
+            </div>
+            
+           
+                        
+        </div>
+    </div>
+                
+       
+            
+             
+                
+       
+      </section>
+      <div id="team" class="our-team-area area-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline services-head text-center">
+                <h2 style="color: #2d335c;">Chat Our Team For Discussion</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+          {% if teams %}
+              {% for team in teams %}
+                  <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                    <img src="{{team.image.url}}" alt="">
+                  </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="http://www.facebook.com/profile.php?id={{team.facebook}}"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a href="http://twitter.com/{{team.twitter}}"><i class="fa fa-twitter"></i></a>
+                      </li>
+                      
+                      <li>
+                        <a href="https://api.whatsapp.com/send?phone=+234{{team.whatsApp}}"><i class="fa fa-whatsapp"></i></a>
+                      </li>
+                      <li>
+                        <a href="http://instagram.com/{{team.instagram}}"><i class="fa fa-instagram"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="team-content text-center">
+                  <h4>{{team.name}}</h4>
+                  <p>{{team.position}}</p>
+                </div>
+              </div>
+            </div>
+              {% endfor %}
+          {% else %}
+          No Team
+          {% endif %}
+          
+              </div>
+            </div>
+           
+    <br> <br> 
+{% endblock %}

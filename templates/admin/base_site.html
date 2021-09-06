@@ -1,0 +1,12 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+{% block branding %}
+    <h1 id="head">
+        <img src="{% static 'img/Capturekendra-removebg-preview.png'%}" alt="KendraGroup" class="img-fluid" height="30" width="30">
+        <span style="color: rgb(240, 22, 22);">K</span>endra <span style="color: rgb(240, 22, 22);"> Admin</span>
+    </h1>
+{% endblock %}
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}

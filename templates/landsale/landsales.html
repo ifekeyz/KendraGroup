@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+ <br> <br> <br> <br>
+   
+   <!-- Land For Sale -->
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="section-headline services-head text-center">
+          <h2 style="color: #2d335c;">Land for sale </h2>
+        </div>
+      </div>
+    </div>
+     <!-- Land 1 -->
+     <div class="row mt-5">
+     {% if landsales %}
+        {% for landsale in landsales %}
+        <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card">
+          <img src="{{landsale.image.url}}" class="card-img-top"  alt="land pix" style="width:1920px;height:190px;">
+          <div class="card-body">
+            <h5 class="card-title text-center" style="color: #2d335c;"> <i class="fa fa-map-marker"></i>{{landsale.location}}</h5>
+            <hr style="color: rgb(240, 22, 22); ">
+  
+            <p class="card-text text-center"> <small class="text-center" style="color: rgb(240, 22, 22); ">Brief
+                details: <br></small>{{landsale.details}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fa fa-money"></i> Price: #{{landsale.price | intcomma}} <small>(Negotiable)</small></li>
+             <li class="list-group-item"> <i class="fa fa-th-large"></i> land size: {{landsale.landsize}}</li>
+  
+          </ul>
+          <div class="card-body">
+            <a href="{% url 'landsale' landsale.id %}" class="btn  text-light  col-12" style="  background-color: #2d335c;">More info</a>
+  
+          </div>
+        </div>
+  
+      </div>
+        {% endfor %}
+     {% else %}
+      <div class="col-md-12">
+        <h3>No Landsale available</h3>
+      </div>
+     {% endif %}
+      
+     
+  
+  <!-- Latest land for sale -->
+  
+    </div>
+  </div>
+  <div class="blog-pagination">
+        {% if landsales.has_other_pages %}
+             <ul class="pagination justify-content-center mt-3">
+             {% if landsales.has_previous %}
+                    <li class="page-item"><a href="?page={{landsales.previous_page_number}}" class="page-link">&laquo;</a></li>
+             {% else %}
+                    <li class="page-item disabled"><a class="page-link">&laquo;</a></li> 
+             {% endif %}
+         {% for i in landsales.paginator.page_range %}
+          {% if landsales.number == i %}
+              <li class="page-item active"><a class="page-link">{{i}}</a></li>
+              {% else %}
+              <li class="page-item"><a href="?page={{i}}" class="page-link">{{i}}</a></li>
+          {% endif %}
+        {% endfor %}
+
+         {% if landsales.has_next %}
+                    <li class="page-item"><a href="?page={{landsales.next_page_number}}" class="page-link">&raquo;</a></li>
+             {% else %}
+                    <li class="page-item disabled"><a class="page-link">&raquo;</a></li> 
+             {% endif %}
+
+           </ul>
+      {% endif %}
+        </div> 
+
+     {% comment %} <br> <br> <br> <br><!-- End Header --> {% endcomment %}
+   
+  <br> <br> <br> <br>
+{% endblock %}

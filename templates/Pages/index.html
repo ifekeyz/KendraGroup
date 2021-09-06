@@ -1,0 +1,523 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+     <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            {% if sliders %}
+               {% for slider in sliders %}
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background: url({{slider.slider1.url}})">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Welcome to <span style="color: rgb(240, 22, 22);">K</span>endra <span style="color: rgb(240, 22, 22);">Group</span></h2>
+                <p style="color: #fff;" class="animate__animated animate__fadeInUp">We buy and sell landed properties suitable for Residential, Commercial and Mixed purposes anywhere in Lagos.</p>
+                <a href="{% url 'housesales' %}" class="btn-get-started animate__animated animate__fadeInUp">House For Sale</a>
+               
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background: url({{slider.slider2.url}})">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated fanimate__adeInDown"><span style="color: rgb(240, 22, 22);">K</span>endra <span style="color: rgb(240, 22, 22);">Group</span></h2>
+                <p  style="color: #fff;" class="animate__animated animate__fadeInUp">Is the general management and coordination of a commercial or residential property. This involves the general maintenance.</p>
+                <a href="{% url 'houserents' %}" class="btn-get-started animate__animated animate__fadeInUp">house for Rent</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background: url({{slider.slider3.url}})">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown"><span style="color: rgb(240, 22, 22);">K</span>endra <span style="color: rgb(240, 22, 22);">Group</span></h2>
+                <p   style="color: #fff;"class="animate__animated animate__fadeInUp">We buy and sell landed properties suitable for Residential, Commercial and Mixed purposes anywhere in Lagos.</p>
+                <a href="{% url 'automobiles' %}" class="btn-get-started animate__animated animate__fadeInUp">Automobile for sale</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+            {% endfor %}
+                            {% else %}
+                            NOTHING
+                            {% endif %}
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+    
+      <main id="main">
+
+
+        <!-- ======= Services Section ======= -->
+        <div id="services" class="services-area area-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline services-head text-center">
+                  <h2 style="color: #2d335c;">What we offer </h2>
+                </div>
+              </div>
+            </div>
+            {% include 'partials/_alert.html'%}
+            <div class="row text-center mt-5">
+              <!-- Start Left services -->
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="about-move">
+                  <div class="services-details">
+                    <div class="single-services">
+                      <a class="services-icon">
+                        <i class="fa fa-home"></i>
+                      </a>
+                      <h4>Real Estate Brokerage</h4>
+                      <p>
+                        We buy and sell landed properties suitable for Residential, Commercial and Mixed purposes anywhere in Lagos.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- end about-details -->
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="about-move">
+                  <div class="services-details">
+                    <div class="single-services">
+                      <a class="services-icon" >
+                        <i class="fa fa-automobile"></i>
+                      </a>
+                      <h4>Automobile</h4>
+                      <p>
+                        We buy and sell vehicles at the grade of which you wish for anywhere in Nigeria.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- end about-details -->
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <!-- end col-md-4 -->
+                <div class=" about-move">
+                  <div class="services-details">
+                    <div class="single-services">
+                      <a class="services-icon" >
+                        <i class="fa fa-building"></i>
+                      </a>
+                      <h4>Architecture & Engingeering</h4>
+                      <p>
+                        We have a team of competent &experienced Architects, Engineers and Builders with over a decade construction
+                         industry experience and turnkey projects to our credit. 
+                      </p>
+                    </div>
+                  </div>
+                  <!-- end about-details -->
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <!-- end col-md-4 -->
+                <div class=" about-move">
+                  <div class="services-details">
+                    <div class="single-services">
+                      <a class="services-icon" >
+                        <i class="fa fa-paint-brush"></i>
+                      </a>
+                      <h4>Interior Designs & Decorations</h4>
+                      <p>
+                       We are at the service of beautifying your home to the top notch.
+                      </p>
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
+             
+            </div>
+          </div>
+    
+    <div class="container ">
+        <div class="row mt-5">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline services-head text-center">
+                    <h2 style="color: #2d335c;">available automobiles </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Automobile 1 -->
+     <div class="container">
+     <div class="row mt-5">
+        {% if automobiles %}
+            {% for automobile in automobiles %}
+                 <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card">
+            <img src="{{automobile.image.url}}" class="card-img-top" alt="car picture" style="width:1920px;height:190px;">
+            <div class="card-body">
+              <h5 class="card-title text-center" style="color: #2d335c;"> {{automobile.carName}}</h5>
+              <hr style="color: rgb(240, 22, 22); ">
+
+             <h6 class="text-center"> <i class="fa fa-tag"></i>{{automobile.aka}} </h6>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><i class="fa fa-money"></i> Price: #{{automobile.price}} <small>(Negotaible)</small></li>
+              <li class="list-group-item"><i class="fa fa-calendar-minus-o"></i>Model Year: 2007 </li>
+              <li class="list-group-item"> <i class="fa fa-paint-brush"></i> color:{{automobile.color}}</li>
+              <li class="list-group-item"> <i class="fa fa-th-large"></i> Grade:{{automobile.grade}}</li>
+
+            </ul>
+            <div class="card-body">
+              <a href="{% url 'automobile' automobile.id %}" class="btn  text-light  col-12" style="  background-color: #2d335c;">More info</a>
+
+            </div>
+          </div>
+
+        </div>
+            {% endfor %}
+        {% else %}
+        {% endif %}
+      </div>
+      <a href="{% url 'automobiles'%}" class="btn  text-light  justify-content-center " style="  background-color:  rgb(240, 22, 22);"><i class="fa fa-arrow-right"></i></a>
+    </div>
+    <!-- House for sale -->
+    <div class="container">
+        <div class="row mt-5">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline services-head text-center">
+              <h2 style="color: #2d335c;">House For Sale </h2>
+            </div>
+          </div>
+        </div>
+        <!-- House 1 -->
+        <div class="row mt-5">
+            {% if housesales %}
+                {% for housesale in housesales %}
+                     <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card">
+              <img src="{{housesale.image.url}}" class="card-img-top" alt="House 1"style="width:1920px;height:190px;">
+              <div class="card-body">
+                <h5 class="card-title text-center" style="color: #2d335c;"> <i class="fa fa-map-marker"></i> {{housesale.location}}</h5>
+                <hr style="color: rgb(240, 22, 22); ">
+  
+                <p class="card-text text-center"> <small class="text-center" style="color: rgb(240, 22, 22); ">Brief
+                    details: <br></small>{{housesale.brief}}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fa fa-money"></i> Price: #{{housesale.price}} <small>(Negotaible)</small></li>
+                <li class="list-group-item"><i class="fa fa-bed"></i> Bedroom:{{housesale.bedroom}} </li>
+                <li class="list-group-item"> <i class="fa fa-bath"></i> Bathroom:{{housesale.bathroom}}</li>
+                <li class="list-group-item"> <i class="fa fa-th-large"></i> land size:{{housesale.landsize}}</li>
+  
+              </ul>
+              <div class="card-body">
+                <a href="{% url 'housesale' housesale.id %}" class="btn  text-light  col-12" style="  background-color: #2d335c;">More info</a>
+  
+              </div>
+            </div>
+  
+          </div>
+                {% endfor %}
+            {% else %}
+            {% endif %}
+        </div>
+        <a href="{% url 'housesales'%}" class="btn  text-light  justify-content-center " style="  background-color:  rgb(240, 22, 22);"><i class="fa fa-arrow-right"></i></a>
+      </div>
+  
+      <!-- End House for sale -->
+      <!--  House for rent -->
+    <div class="container">
+        <div class="row mt-5">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline services-head text-center">
+              <h2 style="color: #2d335c;">House for Rent </h2>
+            </div>
+          </div>
+        </div>
+         <!-- House 1 -->
+         <div class="row mt-5">
+         {% if houserents %}
+            {% for houserent in houserents %}
+                 <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card">
+              <img src="{{houserent.image.url}}" class="card-img-top"  alt="house pix" style="width:1920px;height:190px;">
+              <div class="card-body">
+                <h5 class="card-title text-center" style="color: #2d335c;"> <i class="fa fa-map-marker"></i> {{houserent.location}}</h5>
+                <hr style="color: rgb(240, 22, 22); ">
+  
+                <p class="card-text text-center"> <small class="text-center" style="color: rgb(240, 22, 22); ">Brief
+                    details: <br></small>{{houserent.brief}}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fa fa-money"></i> Price: #{{houserent.price}} <small>(Negotaible)</small></li>
+                <li class="list-group-item"><i class="fa fa-bed"></i> Bedroom: {{houserent.bedroom}} </li>
+                <li class="list-group-item"> <i class="fa fa-bath"></i> Bathroom:{{houserent.bathroom}}</li>
+                <li class="list-group-item"> <i class="fa fa-th-large"></i> land size:{{houserent.landsize}}</li>
+  
+              </ul>
+              <div class="card-body">
+                <a href="{% url 'houserent' houserent.id %}" class="btn  text-light  col-12" style="  background-color: #2d335c;">More info</a>
+  
+              </div>
+            </div>
+  
+          </div> 
+            {% endfor %}
+         {% else %}
+         {% endif %}
+         
+        
+        </div>
+        <a href="{% url 'houserents'%}" class="btn  text-light  justify-content-center " style="  background-color:  rgb(240, 22, 22);"><i class="fa fa-arrow-right"></i></a>
+      </div>
+  
+      
+      <!-- End of house for rent -->
+      <!-- Land For Sale -->
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="section-headline services-head text-center">
+          <h2 style="color: #2d335c;">Land for sale </h2>
+        </div>
+      </div>
+    </div>
+     <!-- Land 1 -->
+     <div class="row mt-5">
+        {% if landsales %}
+            {% for landsale in landsales %}
+
+                 <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card">
+          <img src="{{landsale.image.url}}" class="card-img-top"  alt="land pix" style="width:1920px;height:190px;">
+          <div class="card-body">
+            <h5 class="card-title text-center" style="color: #2d335c;"> <i class="fa fa-map-marker"></i>{{landsale.location}}</h5>
+            <hr style="color: rgb(240, 22, 22); ">
+  
+            <p class="card-text text-center"> <small class="text-center" style="color: rgb(240, 22, 22); ">Brief
+                details: <br></small>{{landsale.brief}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fa fa-money"></i> Price: #{{landsale.price}} <small>(Negotaible)</small></li>
+             <li class="list-group-item"> <i class="fa fa-th-large"></i> land size: {{landsale.landsize}}</li>
+  
+          </ul>
+          <div class="card-body">
+            <a href="{% url 'landsale' landsale.id %}" class="btn  text-light  col-12" style="  background-color: #2d335c;">More info</a>
+  
+          </div>
+        </div>
+  
+      </div>
+            {% endfor %}
+        {% else %}
+        NOTHING
+        {% endif %}
+     
+     
+     
+  
+    </div>
+    <div>
+    <a href="{% url 'landsales'%}" class="btn  text-light  justify-content-center " style="  background-color:  rgb(240, 22, 22);"><i class="fa fa-arrow-right"></i></a>
+  </div>
+  </div>
+  
+  <!-- Latest land for sale -->
+
+    <!-- ======= Team Section ======= -->
+    <div id="team" class="our-team-area area-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline services-head text-center">
+                <h2 style="color: #2d335c;">Our Team</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5 offset-sm-2">
+          {% if teams %}
+              {% for team in teams %}
+                   <div class="col-md-2 col-sm-2 col-xs-12">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                    <img src="{{team.image.url}}" alt="">
+                  </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="http://www.facebook.com/profile.php?id={{team.facebook}}"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      
+                      <li>
+                        <a href="https://api.whatsapp.com/send?phone=+234{{team.whatsApp}}"><i class="fa fa-whatsapp"></i></a>
+                      </li>
+                      <li>
+                        <a href="http://instagram.com/{{team.instagram}}"><i class="fa fa-instagram"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="team-content text-center">
+                  <h4>{{team.name}}</h4>
+                  <p>{{team.position}}</p>
+                </div>
+              </div>
+            </div>
+              {% endfor %}
+          {% else %}
+          {% endif %}
+           
+          
+            <!-- End column -->
+          </div>
+        </div>
+      </div><!-- End Team Section -->
+
+
+
+   <!-- ======= Contact Section ======= -->
+   <div id="contact" class="contact-area">
+    <div class="contact-inner area-padding">
+      <div class="contact-overly"></div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2 style="color: #2d335c;">Contact us</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Start contact icon column -->
+          <div class="col-md-4">
+            <div class="contact-icon text-center">
+              <div class="single-icon">
+                <i class="fa fa-mobile"></i>
+                <p>
+                  Call: +2348123809002<br>
+                  <span>24/7 available</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Start contact icon column -->
+          <div class="col-md-4">
+            <div class="contact-icon text-center">
+              <div class="single-icon">
+                <i class="fa fa-envelope-o"></i>
+                <p>
+                  Email:kendragroup.sales@gmail.com<br>
+                  <span>Web: www.kendragroup.com.ng</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Start contact icon column -->
+          <div class="col-md-4">
+            <div class="contact-icon text-center">
+              <div class="single-icon">
+                <i class="fa fa-map-marker"></i>
+                <p>
+                  Head Office – 	Plot 26, Akin Leigh Crescent, 
+                  Off Admiralty way, By Marcopolo, Phase 1,  
+                  
+                  <span>Lekki,Lagos,Nigeria.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="container">
+          
+               
+                <div class="container ">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="section-headline text-center">
+                        <h2 style="color: #2d335c;">Consulting Form</h2>
+                      </div>
+                    </div>
+                  </div>
+                     <div class="col-md-12 ">
+                <div class="form contact-form">
+                  <form action="{% url 'consult'%}" method="post" role="form" >
+                  {% csrf_token %}
+                    <div class="form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                        data-rule="minlen:4" data-msg="Please enter at least 4 chars" required />
+                      <div class="validate"></div>
+                    </div>
+                    <div class="form-group mt-3">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                        data-rule="email" data-msg="Please enter a valid email"required/>
+                      <div class="validate"></div>
+                    </div>
+                    <div class="form-group mt-3">
+                      <input type="number" class="form-control" name="phone" id="email" placeholder="Your phone number(Hot line)"
+                        data-rule="email" data-msg="Please enter a valid email"required/>
+                      <div class="validate"></div>
+                    </div>
+                    <div class="form-group mt-3">
+                      <input type="text" class="form-control" name="address" id="email" placeholder="Your Residential Address"
+                        data-rule="address" data-msg="Please enter a valid email" />
+                      <div class="validate"></div>
+                    </div>
+                    <div class="form-group mt-3">
+                      <input type="text" class="form-control" name="location" id="subject" placeholder="input your preffered location"
+                        data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required />
+                      <div class="validate"></div>
+                    </div>
+                    <div class="form-group mt-3">
+                      <input type="number" class="form-control" name="price" id="subject" placeholder="Price budget"
+                        data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required />
+                      <div class="validate"></div>
+                    </div>
+                    
+                    <div class="form-group mt-3">
+                      <textarea class="form-control" name="message" rows="5" data-rule="required"
+                        data-msg="Please write something for us" placeholder="kindly input more details of preferred house suitable to you"></textarea>
+                      <div class="validate"></div>
+                    </div>
+                    <br><br>
+                    {% comment %} <div class="mb-3">
+                      <div class="loading">Loading</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div> {% endcomment %}
+                    {% comment %} <strong class="text-danger text-center mb-3"> N:B:Consulting fee=  #3000 click submit form to be redirected for payment platform</strong> {% endcomment %}
+                    <!-- <div class="text-center"><button class="btn btn-prima col-12"  style="color: #2d335c;">Send Message</button></div> -->
+                    <input type="submit" class="btn  text-light  col-12" style="  background-color: #2d335c;" value="Send">
+                  </form>
+                </div>
+              </div>
+              <!-- End Left contact -->
+            </div>
+          </div>
+        </div>
+      </div><!-- End Contact Section -->
+    </div>
+    </div>
+            </div>
+        </div>
+
+  {% endblock %}

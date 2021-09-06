@@ -1,0 +1,108 @@
+  <!-- ======= Footer ======= -->
+   <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+           
+            <h4 style="color: #fff;">Subscribe to our news letter</h4>
+          </div>
+          <div class="col-lg-6">
+            <form action="{% url 'subscribe'%}" method="POST">
+            {% csrf_token %}
+              {% comment %} {{form}} {% endcomment %}
+              <input type="email" name="email" id="email" placeholder="input email">
+              <input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa fa-chevron-right"></i> <a  href="{% url 'index' %}">Home</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a  href="{% url 'about' %}">About us</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a href="{% url 'faq' %}">FAQ</a></li>
+               <li><i class="fa fa-chevron-right"></i> <a  href="{% url 'automobiles' %}">Automobiles</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a href="{% url 'landsales' %}">Land For Sale</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a  href="{% url 'houserents' %}">House For Rent</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a  href="{% url 'housesales' %}">House For Sale</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="fa fa-chevron-right"></i> <a>Architecture & Engingeering</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a>Interior Designs & Decorations</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a>Product Management</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a>Real Estate Brokerage</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a>Automobile</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Head Office – </h4>
+            <p>
+              	Plot 26, Akin Leigh Crescent, 
+              Off Admiralty way, By Marcopolo, Phase 1, Lekki, Lagos.
+              <h4>Ikorodu Office –</h4>
+              <p >
+                 Plot 1, Oyebanji Street, Off Itamaga Road, 
+                Omitoro, Ikorodu, Lagos
+                
+               </p>
+              <!-- A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br> -->
+             
+             
+            </p>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3> <a href="{% url 'index'%}"> <span style="color: rgb(240, 22, 22);">K</span><span style="color: #2d335c;">endra </span><span style="color: rgb(240, 22, 22);">Group</span></a></h3>
+             <h6 style="color: black;">About us</h6>
+            <p style="color: #2d335c;">1.	MISSION:	To ensure affordable housing for all.<br>
+
+              2.	VISION:	To be one of the leading Real Estate Brokerage, Engineering and Architectural firms in Nigeria.  <br>
+              
+              3.	AIM: 		To reduce risk of landed property acquisition in Nigeria 
+              </p>
+            <div class="social-links mt-3">
+              <a href="http://twitter.com/kendragroup_ng" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="http://www.facebook.com/profile.php?id=your_facebook_id" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="http://instagram.com/kendragroup.ng" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="mailto: kendragroup.sales@gmail.com" class="google-plus"><i class="fa fa-google"></i></a>
+              <a href="https://api.whatsapp.com/send?phone=+2348123809002"class="-whatsapp"><i class="fa fa-whatsapp"></i></a>
+             
+             
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+     
+      <div class="copyright">
+        
+          &copy; Copyright <script>document.write(new Date().getFullYear())</script> <strong>Kendragroup</strong>. All Rights Reserved
+        
+        <div class="copyright">
+             
+          Designed by Amen Technology
+        </div>
+        
+      </div>
+    </div>
+  </footer><!-- End Footer -->

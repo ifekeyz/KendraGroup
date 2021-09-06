@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+
+ <br> <br> <br> <br>
+   <!-- House for sale -->
+   <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="section-headline services-head text-center">
+          <h2 style="color: #2d335c;">House for sale </h2>
+        </div>
+      </div>
+    </div>
+   
+      <!-- House 1 -->
+    <div class="row mt-5">
+      {% if housesales %}
+          {% for housesale in housesales %}
+              <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card">
+          <img src="{{housesale.image.url}}" class="card-img-top" alt="House 1"style="width:1920px;height:190px;">
+          <div class="card-body">
+            <h5 class="card-title text-center" style="color: #2d335c;"> <i class="fa fa-map-marker"></i> {{housesale.location}}</h5>
+            <hr style="color: rgb(240, 22, 22); ">
+
+            <p class="card-text text-center"> <small class="text-center" style="color: rgb(240, 22, 22); ">Brief
+                details: <br></small>{{housesale.brief}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fa fa-money"></i> Price: #{{housesale.price | intcomma}} <small>(Negotaible)</small></li>
+            <li class="list-group-item"><i class="fa fa-bed"></i> Bedroom: {{housesale.bedroom}} </li>
+            <li class="list-group-item"> <i class="fa fa-bath"></i> Bathroom: {{housesale.bathroom}}</li>
+            <li class="list-group-item"> <i class="fa fa-th-large"></i> land size: {{housesale.landsize}}</li>
+
+          </ul>
+          <div class="card-body">
+            <a href="{% url 'housesale' housesale.id %}" class="btn  text-light  col-12" style="  background-color: #2d335c;">More info</a>
+
+          </div>
+        </div>
+
+      </div>
+          {% endfor %}
+      {% else %}
+        <div class="col-md-12">
+        <h3>No Housesale available</h3>
+      </div>
+      {% endif %}
+      </div>
+     </div>
+       <div class="blog-pagination">
+        {% if housesales.has_other_pages %}
+             <ul class="pagination justify-content-center mt-3">
+             {% if housesales.has_previous %}
+                    <li class="page-item"><a href="?page={{housesales.previous_page_number}}" class="page-link">&laquo;</a></li>
+             {% else %}
+                    <li class="page-item disabled"><a class="page-link">&laquo;</a></li> 
+             {% endif %}
+         {% for i in housesales.paginator.page_range %}
+          {% if housesales.number == i %}
+              <li class="page-item active"><a class="page-link">{{i}}</a></li>
+              {% else %}
+              <li class="page-item"><a href="?page={{i}}" class="page-link">{{i}}</a></li>
+          {% endif %}
+        {% endfor %}
+
+         {% if housesales.has_next %}
+                    <li class="page-item"><a href="?page={{housesales.next_page_number}}" class="page-link">&raquo;</a></li>
+             {% else %}
+                    <li class="page-item disabled"><a class="page-link">&raquo;</a></li> 
+             {% endif %}
+
+           </ul>
+      {% endif %}
+        </div> 
+        <br> <br>
+{% endblock %}

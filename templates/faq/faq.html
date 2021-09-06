@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <br> <br> <br> <br>
+   <!-- House for sale -->
+   <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="section-headline services-head text-center">
+          <h2 style="color: #2d335c;">Frequently asked questions  </h2>
+        </div>
+      </div>
+      <div class="card  mt-5 " style="background-color:#2d335c ; color: #2d335c;">
+        <div class="card-header ">
+        <h5 class="text-white text-center">We hope this could be helpful  </h5> 
+        </div>
+        <ul class="list-group list-group-flush">
+        {% if faqs %}
+            {% for faq in faqs %}
+               <li class="list-group-item">  <i class="fa fa-pencil"></i> Question: {{faq.question}} <br>   <hr style='color:red;'>
+            <span class="text-success">  <i class="fa fa-bookmark"></i> Reply:{{faq.answer}}</span>
+          </li>
+            {% endfor %}
+        {% else %}
+            <div class="col-md-12">
+              No Frequently Questions Available
+            </div>
+        {% endif %}
+      </div>
+        <marquee class="mt-5 text-success " behavior="alternate" direction="">IF YOU ARE NOT SATISFIED WITH THE FAQ KINDLY MESSAGE US </marquee>
+        <div class="col-md-12 col-sm-12 col-xs-12 mt-5 mb-5">
+            <div class="section-headline services-head text-center">
+              <h2 style="color: #2d335c;">Message Us  </h2>
+            </div>
+          </div>
+          
+        <div class="form contact-form ">
+          <form action="{% url 'message' %}" method="post" role="form">
+          {% csrf_token %}
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                data-rule="email" data-msg="Please enter a valid email" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" data-rule="required"
+                data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validate"></div>
+            </div>
+            {% comment %} <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div> {% endcomment %}<br><br>
+            <input type="submit" class="btn  text-light  col-12" style="  background-color: #2d335c;" value="Send Message">
+            {% comment %} <a href="#" class="btn  text-light  col-12" style="  background-color: #2d335c;">Send Message</a> {% endcomment %}
+          </form>
+   
+    </div>
+    </div>
+  </div> <br> <br> <br>
+
+{% endblock %}
